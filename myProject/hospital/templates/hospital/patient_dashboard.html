@@ -1,0 +1,16 @@
+<h2>Patient Dashboard</h2>
+
+<a href="{% url 'logout' %}">Logout</a>
+
+<h3>Your Appointments</h3>
+<ul>
+{% for appointment in appointments %}
+    <li>
+        {{ appointment.date }} {{ appointment.time }} -
+        {{ appointment.doctor.user.username }} -
+        {{ appointment.status }}
+    </li>
+{% empty %}
+    <li>No appointments</li>
+{% endfor %}
+</ul>

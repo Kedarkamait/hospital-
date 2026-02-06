@@ -1,0 +1,80 @@
+{% extends 'hospital/base.html' %}
+
+{% block title %}Book Appointment | City Hospital{% endblock %}
+
+{% block content %}
+
+<div class="text-center mb-4">
+    <h1 class="text-primary fw-bold">Book an Appointment</h1>
+    <p class="text-muted">Schedule your visit with our expert doctors</p>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="card shadow-lg rounded-4">
+            <div class="card-header bg-primary text-white text-center py-3">
+                <h4 class="mb-0">Appointment Form</h4>
+            </div>
+            <div class="card-body p-4">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">Patient Name</label>
+                            <input type="text" name="patient_name" class="form-control form-control-lg" placeholder="Your full name" required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">Email Address</label>
+                            <input type="email" name="email" class="form-control form-control-lg" placeholder="example@email.com" required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">Phone Number</label>
+                            <input type="tel" name="phone" class="form-control form-control-lg" placeholder="98XXXXXXXX" required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">Department</label>
+                            <select name="department" class="form-select form-select-lg" required>
+                                <option selected disabled>Select Department</option>
+                                {% for dept in departments %}
+                                    <option value="{{ dept.id }}">{{ dept.name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">Doctor</label>
+                            <select name="doctor" class="form-select form-select-lg" required>
+                                <option selected disabled>Select Doctor</option>
+                                {% for doc in doctors %}
+                                    <option value="{{ doc.id }}">{{ doc.user.get_full_name }} ({{ doc.department.name }})</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">Appointment Date</label>
+                            <input type="date" name="appointment_date" class="form-control form-control-lg" required>
+                        </div>
+
+                        <div class="col-12">
+                            <label class="form-label fw-bold">Message (Optional)</label>
+                            <textarea name="message" class="form-control form-control-lg" rows="3" placeholder="Describe your problem"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 text-center">
+                        <button type="submit" class="btn btn-primary btn-lg rounded-pill px-5 shadow-sm">
+                            Confirm Appointment
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

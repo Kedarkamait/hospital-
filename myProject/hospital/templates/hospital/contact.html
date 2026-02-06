@@ -1,0 +1,81 @@
+{% extends 'hospital/base.html' %}
+
+{% block title %}Contact Us | City Hospital{% endblock %}
+
+{% block content %}
+
+<!-- ===== PAGE HEADER ===== -->
+<div class="text-center mb-5">
+    <h1 class="text-primary fw-bold">Contact Us</h1>
+    <p class="text-muted">
+        We’re here to help. Get in touch with us anytime.
+    </p>
+</div>
+
+<div class="row g-4">
+
+    <!-- ===== CONTACT INFO ===== -->
+    <div class="col-md-5">
+        <div class="card shadow-sm h-100">
+            <div class="card-body">
+                <h5 class="card-title mb-3">Hospital Information</h5>
+
+                <p><strong>📍 Address:</strong> Kathmandu, Nepal</p>
+                <p><strong>📞 Phone:</strong> +977-98XXXXXXXX</p>
+                <p><strong>✉️ Email:</strong> info@cityhospital.com</p>
+
+                <hr>
+
+                <p><strong>🕒 Working Hours:</strong></p>
+                <ul class="list-unstyled">
+                    <li>Mon – Fri: 8:00 AM – 8:00 PM</li>
+                    <li>Saturday: 9:00 AM – 5:00 PM</li>
+                    <li>Sunday: Emergency Only</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== CONTACT FORM ===== -->
+    <div class="col-md-7">
+        <div class="card shadow-sm">
+            <div class="card-body">
+
+                <h5 class="card-title mb-3">Send Us a Message</h5>
+
+                <form method="post">
+                    {% csrf_token %}
+
+                    <div class="mb-3">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-control" placeholder="Your name" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" class="form-control" placeholder="your@email.com" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Subject</label>
+                        <input type="text" class="form-control" placeholder="Subject" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Message</label>
+                        <textarea class="form-control" rows="4" placeholder="Write your message..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                        Send Message
+                    </button>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

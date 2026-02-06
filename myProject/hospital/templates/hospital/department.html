@@ -1,0 +1,86 @@
+{% extends 'hospital/base.html' %}
+
+{% block title %}Departments | City Hospital{% endblock %}
+
+{% block content %}
+
+<!-- ===== PAGE HEADER ===== -->
+<div class="text-center mb-5">
+    <h1 class="text-primary fw-bold">Our Departments</h1>
+    <p class="text-muted">
+        Specialized departments delivering quality healthcare
+    </p>
+</div>
+
+<!-- ===== DEPARTMENTS GRID ===== -->
+<div class="row g-4">
+
+    <div class="col-md-4">
+        <div class="card shadow-sm h-100 text-center">
+            <div class="card-body">
+                <h5 class="card-title">🫀 Cardiology</h5>
+                <p class="card-text">
+                    Diagnosis and treatment of heart-related diseases.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card shadow-sm h-100 text-center">
+            <div class="card-body">
+                <h5 class="card-title">🧠 Neurology</h5>
+                <p class="card-text">
+                    Treatment of brain, spine, and nervous system disorders.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card shadow-sm h-100 text-center">
+            <div class="card-body">
+                <h5 class="card-title">🦴 Orthopedics</h5>
+                <p class="card-text">
+                    Care for bones, joints, and muscles.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card shadow-sm h-100 text-center">
+            <div class="card-body">
+                <h5 class="card-title">🤰 Gynecology</h5>
+                <p class="card-text">
+                    Women’s health, pregnancy, and maternity care.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card shadow-sm h-100 text-center">
+            <div class="card-body">
+                <h5 class="card-title">🧒 Pediatrics</h5>
+                <p class="card-text">
+                    Healthcare services for infants and children.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card shadow-sm h-100 text-center">
+            <div class="card-body">
+                <h5 class="card-title">🧪 Pathology</h5>
+                <p class="card-text">
+                    Laboratory tests and diagnostic services.
+                </p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
